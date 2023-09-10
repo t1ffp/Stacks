@@ -24,6 +24,8 @@ namespace TarodevController {
 
         Animator anim;
 
+        private float _pushPower = 1f;
+
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
@@ -333,6 +335,22 @@ namespace TarodevController {
             //{
             //    anim.SetBool("isWalking", false);
             //}
+        }
+
+        private void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.transform.tag == "Crate")
+            {
+                Rigidbody2D box = collision.collider.GetComponent<Rigidbody2D>();
+
+                if (box != null)
+                {
+                    Vector2 pushDirection = new Vector2(collision.transform.position.x, 0);
+                    box.velocity = pushDirection * _pushPower;
+                }
+
+                //Debug.Log("hit");
+            }
         }
     }
 }
