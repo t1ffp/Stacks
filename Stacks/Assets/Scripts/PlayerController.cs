@@ -337,19 +337,18 @@ namespace TarodevController {
             //}
         }
 
-        private void OnCollisionEnter2D(Collision2D collision)
+        private void OnControllerColliderHit(ControllerColliderHit hit)
         {
-            if (collision.transform.tag == "Crate")
+            if (hit.transform.tag == "Crate")
             {
-                Rigidbody2D box = collision.collider.GetComponent<Rigidbody2D>();
+                Rigidbody2D box = hit.collider.GetComponent<Rigidbody2D>();
 
                 if (box != null)
                 {
-                    Vector2 pushDirection = new Vector2(collision.transform.position.x, 0);
+                    Vector2 pushDirection = new Vector2(hit.moveDirection.x, 0);
                     box.velocity = pushDirection * _pushPower;
                 }
 
-                //Debug.Log("hit");
             }
         }
     }
