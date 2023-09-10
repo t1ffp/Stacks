@@ -26,8 +26,7 @@ namespace TarodevController {
             // Flip the sprite
             if (_player.Input.X != 0) transform.localScale = new Vector3(_player.Input.X > 0 ? 1 : -1, 1, 1);
 
-
         }
-    
+
     }
 }

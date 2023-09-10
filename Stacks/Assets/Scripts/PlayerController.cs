@@ -317,13 +317,15 @@ namespace TarodevController {
             if (Input.JumpDown)
             {
                 anim.SetBool("isJumping", true);
+                //anim.SetBool("isWalking", false);
             }
             else
             {
                 anim.SetBool("isJumping", false);
+                //anim.SetBool("isWalking", true);
             }
 
-            //if(Input.X > 0)
+            //if (Input.X != 0 && Velocity.y == 0)
             //{
             //    anim.SetBool("isWalking", true);
             //}
