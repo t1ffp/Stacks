@@ -26,6 +26,7 @@ namespace TarodevController {
 
         private float _pushPower = 1f;
 
+
         // This is horrible, but for some reason colliders are not fully established when update starts...
         private bool _active;
         void Awake() => Invoke(nameof(Activate), 0.5f);
@@ -351,5 +352,6 @@ namespace TarodevController {
 
             }
         }
+
     }
 }
