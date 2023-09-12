@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class PlatformButton : MonoBehaviour
@@ -10,7 +9,7 @@ public class PlatformButton : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Crate")
+        if (other.tag == "Crate1")
         {
             platform1.SetActive(true);
         }

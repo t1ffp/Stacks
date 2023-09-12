@@ -9,6 +9,7 @@ TagManager:
   - Spikes
   - Crate2
   - Player2
+  - Crate1
   layers:
   - Default
   - TransparentFX
