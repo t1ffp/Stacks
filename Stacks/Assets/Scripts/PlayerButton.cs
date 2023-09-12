@@ -8,7 +8,7 @@ public class PlayerButton : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Player" || other.tag == "Player2")
         {
             door.gameObject.SetActive(false);
 
